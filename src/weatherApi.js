@@ -18,13 +18,14 @@ function trimData(obj) {
 
 //Get weather data for the given location
 export default async function getData(location) {
-    try {
         let response = await fetch(`http://api.weatherapi.com/v1/current.json?key=a986c6321f714aa5ba752739232704&q=${location}`);
+        if (!response.ok) {
+            let res = await response.json();
+            let errorMsg = res.error.message;
+            return errorMsg;
+        }
         let data = await response.json();
         //reduce data to only the data we need
         finalObj = trimData(data);
         return finalObj;
-    } catch (error) {
-        console.log("error", error);
-    }
 }
