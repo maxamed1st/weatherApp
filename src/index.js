@@ -1,3 +1,4 @@
+import "./style.css";
 import {newElement, clearNode, toggleTemp, changeBackground} from "./DOM";
 import getData from "./weatherapi";
 //select submit button and information div

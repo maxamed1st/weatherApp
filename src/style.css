@@ -1,0 +1,60 @@
+html {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+*, *::after, *::before {
+    box-sizing: inherit;
+}
+#container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+#searcbar {
+    height: 20%
+}
+#information {
+    display: grid;
+    grid-auto-flow: column;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(4, 1fr);
+    grid-template-areas: 
+    "a a"
+    "b c"
+    "d d"
+    "e g";
+    justify-self: center;
+    align-self: center;
+    background-color: white;
+}
+#tempeture {
+    grid-area: a;
+    justify-self: center;
+    font-size: xx-large;
+}
+#name {
+    grid-area: b;
+    justify-self: center;
+}
+#country {
+    grid-area: c;
+    justify-self: center;
+}
+#condition {
+    grid-area: d;
+    justify-self: center;
+    font-size: xx-large;
+}
+#lastUpdated {
+    grid-area: e;
+    justify-self: left;
+    font-size: xx-small;
+}
+#localTime {
+    grid-area: g;
+    justify-self: right;
+    font-size: xx-small;
+}
